@@ -2,14 +2,8 @@
 [Link para a playlist com os screencasts no YouTube](https://www.youtube.com/watch?v=2SGlXksD2gA&list=PLIFOx3X8xDuvT4otwlbFM7ca8uCRrY9C_)
 
 ## Criar o banco de dados
-```bash
-$ sudo mysql -p
-senha:
-```
-```sql
-CREATE DATABASE validation;
-GRANT ALL PRIVILEGES ON validation.* TO user@localhost IDENTIFIED BY 'user';
-```
+- Crie o banco de dados *validation* em seu SGBD preferido
+    - Eu uso MariaDB/MySQL nos screencasts
 
 ## Criar o projeto Laravel
 ```bash
@@ -18,7 +12,7 @@ cd validation
 ```
 
 ## Editar os dados da conexão com o banco de dados
-- No arquivo .env
+- No arquivo .env, coloque os dados da sua conexão com o banco de dados
 ```bash
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -50,7 +44,7 @@ public function up()
 ```
 
 ## Migrar o banco de dados
-- Se você usa o MariaDB, edite o arquivo app/Providers/AppServiceProvider.php
+- Se você usa o MariaDB ou versões antigas do MySQL (abaixo da 5.7.7), edite o arquivo app/Providers/AppServiceProvider.php
 ```php
 <?php
 
@@ -88,6 +82,9 @@ php artisan migrate
 ```
 
 ## Crie dados fictícios
+- Crie a Factory com o comando:
+```php artisan make:factory LivroFactory --model="App\\Livro"```
+
 - No arquivo database/factories/LivroFactory.php
 ```php
 <?php

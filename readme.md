@@ -210,11 +210,12 @@ class LivroController extends Controller
 ## Criar as rotas para nosso resource
 - No arquivo routes/web.php
 ```php
-Route::resource('livros', 'LivroController')
+Route::resource('livros', 'LivroController');
 ```
 
 ## Criar as views
 - No arquivo resources/views/livros/index.blade.php
+    - Você deve criar a pasta livros e o arquivo index.blade.php
 ```php
 @extends('layouts.app')
 @section('content')
@@ -266,6 +267,7 @@ Route::resource('livros', 'LivroController')
 @endsection
 ```
 - No arquivo resources/views/livros/show.blade.php
+    - Você deve criar o arquivo show.blade.php
 ```php
 @extends('layouts.app')
 @section('content')
@@ -296,14 +298,17 @@ Route::resource('livros', 'LivroController')
 @endsection
 ```
 - No arquivo resources/views/livros/create.blade.php
+    - Você deve criar o arquivo create.blade.php
 ```php
 @include('forms.livro')
 ```
 - No arquivo resources/views/livros/edit.blade.php
+    - - Você deve criar o arquivo edit.blade.php
 ```php
 @include('forms.livro')
 ```
 - No arquivo resources/views/forms/livro.blade.php
+    - Você deve criar a pasta forms e o arquivo livro.blade.php
 ```php
 @extends('layouts.app')
 @section('content')

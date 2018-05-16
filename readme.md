@@ -210,7 +210,7 @@ class LivroController extends Controller
 ## Criar as rotas para nosso resource
 - No arquivo routes/web.php
 ```php
-Route::resource('photos', 'PhotoController')
+Route::resource('livros', 'LivroController')
 ```
 
 ## Criar as views

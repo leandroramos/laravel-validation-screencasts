@@ -44,6 +44,7 @@ public function up()
 ```
 
 ## Migrar o banco de dados
+- Se você usa o XAMPP (ou outro pacote que use o MariaDB) ou
 - Se você usa o MariaDB ou versões antigas do MySQL (abaixo da 5.7.7), edite o arquivo app/Providers/AppServiceProvider.php
 ```php
 <?php
@@ -195,7 +196,7 @@ class LivroController extends Controller
         $livro->save();
 
         $request->session()->flash('alert-success', 'Livro alterado com sucesso!');
-        return redirect(back());
+        return redirect('livros');
     }
 
     public function destroy(Request $request, Livro $livro)
